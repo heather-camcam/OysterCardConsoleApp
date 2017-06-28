@@ -1,0 +1,6 @@
+c:\users\heather\documents\visual studio 2017\Projects\OysterCard\OysterCard\bin\Debug\OysterCard.exe.config
+c:\users\heather\documents\visual studio 2017\Projects\OysterCard\OysterCard\bin\Debug\OysterCard.exe
+c:\users\heather\documents\visual studio 2017\Projects\OysterCard\OysterCard\bin\Debug\OysterCard.pdb
+c:\users\heather\documents\visual studio 2017\Projects\OysterCard\OysterCard\obj\Debug\OysterCard.csprojResolveAssemblyReference.cache
+c:\users\heather\documents\visual studio 2017\Projects\OysterCard\OysterCard\obj\Debug\OysterCard.exe
+c:\users\heather\documents\visual studio 2017\Projects\OysterCard\OysterCard\obj\Debug\OysterCard.pdb
