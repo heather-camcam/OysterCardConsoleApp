@@ -7,7 +7,7 @@ namespace OysterCard
     class Customer
     {
         public int Balance;
-        private bool _inFlight;
+        public bool InFlight;
         private List<Station> _journey;
 
         public Customer()
@@ -23,13 +23,13 @@ namespace OysterCard
 
         public void TouchIn(Station station)
         {
-            _inFlight = true;
+            InFlight = true;
             _journey.Add(station);
         }
 
         public List<Station> TouchOut(Station station)
         {
-            _inFlight = false;
+            InFlight = false;
             _journey.Add(station);
             return _journey;
         }

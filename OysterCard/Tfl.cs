@@ -34,7 +34,7 @@ namespace OysterCard
 
             if (Int32.TryParse(stringAmount, out int amount))
             {
-                Console.WriteLine($"You have topped up £{amount}");
+                Console.WriteLine($"You have topped up £{amount}\n");
             }
             else
             {
@@ -51,7 +51,7 @@ namespace OysterCard
 
             if (Enum.IsDefined(typeof(Station), input))
             {
-                Console.WriteLine($"You have touched in to {input} station");
+                Console.WriteLine($"You have touched in to {input} station\n");
             }
             else
             {
@@ -69,7 +69,7 @@ namespace OysterCard
 
             if (Enum.IsDefined(typeof(Station), input))
             {
-                Console.WriteLine($"You have touched out of {input} station");
+                Console.WriteLine($"You have touched out of {input} station\n");
             }
             else
             {
