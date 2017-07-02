@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OysterCard
 {
@@ -10,11 +6,11 @@ namespace OysterCard
     {
         static void Main(string[] args)
         {
+            var customer = new Customer();
+            var tfl = new Tfl();
+
             while (true)
             {
-                var customer = new Customer();
-                var tfl = new Tfl();
-
                 Console.WriteLine("Welcome to the Oystercard app." +
                     "\nEnter any of the following commands to get started:" +
                     "\nTop up" +

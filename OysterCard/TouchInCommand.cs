@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static OysterCard.Tfl;
 
 namespace OysterCard
@@ -17,17 +13,24 @@ namespace OysterCard
             _customer = customer;
             _tfl = tfl;
 
-            Console.WriteLine("Select a station...\n");
+            if(_customer.Balance < 1)
+                Console.WriteLine($"Your balance is only £{_customer.Balance}. Please top up");
 
-            foreach (Station station in Enum.GetValues(typeof(Station)))
+            else
             {
-                Console.WriteLine($"{station}");
+                Console.WriteLine("Select a station...\n");
+
+                foreach (Station station in Enum.GetValues(typeof(Station)))
+                {
+                    Console.WriteLine($"{station}");
+                }
+                Console.WriteLine("\n");
+
+                var stationName = _tfl.TouchIn();
+
+                _customer.TouchIn(stationName);
             }
-            Console.WriteLine("\n");
-
-            var stationName = _tfl.TouchIn();
-
-            _customer.TouchIn(stationName);
+            
         }
     }
 }

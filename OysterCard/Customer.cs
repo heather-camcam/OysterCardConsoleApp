@@ -1,39 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static OysterCard.Tfl;
 
 namespace OysterCard
 {
     class Customer
     {
-        private Card _card;
-            
+        public int Balance;
+        private bool _inFlight;
+        private List<Station> _journey;
+
         public Customer()
         {
-            _card = new Card();
+            Balance = 0;
+            _journey = new List<Station>();
         }
 
         public void TopUp(int amount)
         {
-            _card.TopUp(amount);
+            Balance += amount;
         }
 
         public void TouchIn(Station station)
         {
-            _card.TouchIn(station);
+            _inFlight = true;
+            _journey.Add(station);
         }
 
         public List<Station> TouchOut(Station station)
         {
-           return _card.TouchOut(station);
+            _inFlight = false;
+            _journey.Add(station);
+            return _journey;
         }
 
         public void DeductFare(int fare)
         {
-            _card.DeductFare(fare);
+            Balance -= fare;
         }
     }
 }
