@@ -10,36 +10,26 @@ namespace OysterCard
     {
         private Customer _customer;
 
-        public TopUpCommand(Customer customer)
+        private Tfl _tfl;
+
+        public TopUpCommand(Customer customer, Tfl tfl)
         {
             _customer = customer;
+            _tfl = tfl;
 
             Console.WriteLine("How much would you like to top up?" +
-                        "\nYou can top up the following amounts:" +
-                        "\n5" +
-                        "\n10" +
-                        "\n20" +
-                        "\n50" +
-                        "\n");
+                    "\nYou can top up the following amounts...\n");
 
-            ValidateInput();
+            var topUpOptions = _tfl.TopUpOptions();
+            foreach (int topUpOption in topUpOptions)
+                {
+                    Console.WriteLine($"{topUpOption}");
+                }
+            Console.WriteLine("\n");
+
+            var topUpAmount = _tfl.ValidateInput();
+            _customer.TopUp(topUpAmount);
         }
-        
-        private void ValidateInput()
-        {
-            var stringAmount = Console.ReadLine();
 
-            if (Int32.TryParse(stringAmount, out int amount))
-            {
-                Console.WriteLine($"You have topped up £{amount}");
-            }
-            else
-            {
-                Console.WriteLine($"Oops {stringAmount} is not valid. " +
-                    "\nMake sure you are only topping up a valid amount.");
-            }
-
-            _customer.TopUp(amount);
-        }
     }
 }
