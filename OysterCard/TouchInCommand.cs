@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OysterCard.Interfaces;
+using System;
 using static OysterCard.Tfl;
 
 namespace OysterCard
@@ -6,9 +7,9 @@ namespace OysterCard
     class TouchInCommand
     {
         private Tfl _tfl;
-        private Customer _customer;
+        private ICustomer _customer;
 
-        public TouchInCommand(Customer customer, Tfl tfl)
+        public TouchInCommand(ICustomer customer, Tfl tfl)
         {
             _customer = customer;
             _tfl = tfl;

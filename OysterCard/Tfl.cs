@@ -1,13 +1,17 @@
-﻿using System;
+﻿using OysterCard.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace OysterCard
 {
-    class Tfl
+    class Tfl : ITfl
     {
         private List<int> _topUpAmounts;
         private Dictionary<Station, int> _stationAndZoneInfo;
+
+        public List<int> TopUpAmounts { get => _topUpAmounts; set => _topUpAmounts = value; }
+        public Dictionary<Station, int> StationAndZoneInfo { get => _stationAndZoneInfo; set => _stationAndZoneInfo = value; }
 
         public Tfl()
         {
@@ -102,7 +106,7 @@ namespace OysterCard
 
         }
 
-        private Dictionary<Station, int> AddZoneInfo()
+        public Dictionary<Station, int> AddZoneInfo()
         {
             _stationAndZoneInfo = new Dictionary<Station, int>()
             {

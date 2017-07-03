@@ -1,14 +1,15 @@
-﻿using System;
+﻿using OysterCard.Interfaces;
+using System;
 
 namespace OysterCard
 {
     class TopUpCommand
     {
-        private Customer _customer;
+        private ICustomer _customer;
 
         private Tfl _tfl;
 
-        public TopUpCommand(Customer customer, Tfl tfl)
+        public TopUpCommand(ICustomer customer, Tfl tfl)
         {
             _customer = customer;
             _tfl = tfl;

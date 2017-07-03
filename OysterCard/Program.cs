@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OysterCard.Interfaces;
+using System;
 
 namespace OysterCard
 {
@@ -6,7 +7,7 @@ namespace OysterCard
     {
         static void Main(string[] args)
         {
-            var customer = new Customer();
+            ICustomer customer = new Customer();
             var tfl = new Tfl();
 
             while (true)

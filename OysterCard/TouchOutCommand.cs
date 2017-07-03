@@ -1,14 +1,15 @@
-﻿using System;
+﻿using OysterCard.Interfaces;
+using System;
 using static OysterCard.Tfl;
 
 namespace OysterCard
 {
     class TouchOutCommand
     {
-        private Tfl _tfl;
-        private Customer _customer;
+        private ITfl _tfl;
+        private ICustomer _customer;
 
-        public TouchOutCommand(Customer customer, Tfl tfl)
+        public TouchOutCommand(ICustomer customer, ITfl tfl)
         {
             _customer = customer;
             _tfl = tfl;
