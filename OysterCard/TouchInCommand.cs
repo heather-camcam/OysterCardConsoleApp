@@ -1,5 +1,6 @@
 ﻿using OysterCard.Interfaces;
 using System;
+using System.Linq;
 using static OysterCard.Tfl;
 
 namespace OysterCard
@@ -24,17 +25,26 @@ namespace OysterCard
             {
                 Console.WriteLine("Select a station...\n");
 
-                foreach (Station station in Enum.GetValues(typeof(Station)))
-                {
-                    Console.WriteLine($"{station}");
-                }
-                Console.WriteLine("\n");
+                PrintStationList();
 
                 var stationName = _tfl.TouchIn();
 
-                _customer.TouchIn(stationName);
+                if(stationName != Station.None)
+                    _customer.TouchIn(stationName);
             }
-            
+        }
+
+        private void PrintStationList()
+        {
+            var query = Enum.GetValues(typeof(Station))
+                    .Cast<Station>()
+                    .Except(new Station[] { Station.None });
+
+            foreach (Station station in query)
+            {
+                Console.WriteLine($"{station}");
+            }
+            Console.WriteLine("\n");
         }
     }
 }

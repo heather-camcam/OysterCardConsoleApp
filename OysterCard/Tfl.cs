@@ -21,6 +21,7 @@ namespace OysterCard
 
         public enum Station
         {
+            None,
             Paddington,
             Hackney,
             LiverpoolStreet,
@@ -49,6 +50,8 @@ namespace OysterCard
             return amount;
         }
 
+
+
         public Station TouchIn()
         {
             var input = Console.ReadLine();
@@ -56,15 +59,15 @@ namespace OysterCard
             if (Enum.IsDefined(typeof(Station), input))
             {
                 Console.WriteLine($"You have touched in to {input} station\n");
+                Enum.TryParse(input, out Station station);
+                return station;
             }
             else
             {
                 Console.WriteLine($"Oops {input} is not a valid station\n");
+                return Station.None;
             }
 
-            Enum.TryParse(input, out Station station);
-
-            return station;
         }
 
         public Station TouchOut()
