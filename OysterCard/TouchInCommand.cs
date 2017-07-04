@@ -7,10 +7,10 @@ namespace OysterCard
 {
     class TouchInCommand
     {
-        private Tfl _tfl;
+        private ITfl _tfl;
         private ICustomer _customer;
 
-        public TouchInCommand(ICustomer customer, Tfl tfl)
+        public TouchInCommand(ICustomer customer, ITfl tfl)
         {
             _customer = customer;
             _tfl = tfl;

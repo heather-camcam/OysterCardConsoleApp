@@ -34,6 +34,8 @@ namespace OysterCard
                 var fare = _tfl.CalculateFare(journey);
 
                 _customer.DeductFare(fare);
+
+                _customer.Journey.Clear();
             }
         }
     }

@@ -24,5 +24,7 @@ namespace OysterCard.Interfaces
         int CalculateFare(List<Station> journey);
 
         Dictionary<Station, int> AddZoneInfo();
+
+        void CheckZone();
     }
 }

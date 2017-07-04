@@ -8,7 +8,7 @@ namespace OysterCard
         static void Main(string[] args)
         {
             ICustomer customer = new Customer();
-            var tfl = new Tfl();
+            ITfl tfl = new Tfl();
 
             while (true)
             {
@@ -17,6 +17,8 @@ namespace OysterCard
                     "\nTop up" +
                     "\nTouch in" +
                     "\nTouch out" +
+                    "\nCheck balance" +
+                    "\nCheck zone" +
                     "\n");
 
                 var userInput = Console.ReadLine();
@@ -33,6 +35,14 @@ namespace OysterCard
 
                     case "Touch out":
                         new TouchOutCommand(customer, tfl);
+                        break;
+
+                    case "Check balance":
+                        Console.WriteLine($"Your remaining balance is £{customer.Balance}");
+                        break;
+
+                    case "Check zone":
+                        tfl.CheckZone();
                         break;
 
                     default:

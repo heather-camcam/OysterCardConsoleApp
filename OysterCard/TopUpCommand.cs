@@ -7,9 +7,9 @@ namespace OysterCard
     {
         private ICustomer _customer;
 
-        private Tfl _tfl;
+        private ITfl _tfl;
 
-        public TopUpCommand(ICustomer customer, Tfl tfl)
+        public TopUpCommand(ICustomer customer, ITfl tfl)
         {
             _customer = customer;
             _tfl = tfl;

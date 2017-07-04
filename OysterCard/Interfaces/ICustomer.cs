@@ -17,5 +17,7 @@ namespace OysterCard.Interfaces
 
         void DeductFare(int fare);
 
+        List<Station> Journey { get; set; }
+
     }
 }

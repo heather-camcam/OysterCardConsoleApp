@@ -121,5 +121,14 @@ namespace OysterCard
 
             return _stationAndZoneInfo;
         }
+
+        public void CheckZone()
+        {
+            foreach (KeyValuePair<Station, int> station in _stationAndZoneInfo)
+            {
+                Console.WriteLine($"{station.Key}: {station.Value}");
+            }
+            Console.WriteLine("\n");
+        }
     }
 }
