@@ -23,8 +23,6 @@ namespace OysterCard
 
             else
             {
-                Console.WriteLine("Select a station...\n");
-
                 _tfl.PrintStationList();
 
                 var stationName = _tfl.TouchIn();

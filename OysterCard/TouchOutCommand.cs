@@ -19,8 +19,6 @@ namespace OysterCard
 
             else
             {
-                Console.WriteLine("Select a station...\n");
-
                 _tfl.PrintStationList();
 
                 var stationName = _tfl.TouchOut();
@@ -30,8 +28,6 @@ namespace OysterCard
                 var fare = _tfl.CalculateFare(journey);
 
                 _customer.DeductFare(fare);
-
-                //_customer.Journey.Clear();
             }
         }
     }

@@ -37,7 +37,9 @@ namespace OysterCard
         {
             var stringAmount = Console.ReadLine();
 
-            if (Int32.TryParse(stringAmount, out int amount))
+            var isANumber = (Int32.TryParse(stringAmount, out int amount));
+
+            if (_topUpAmounts.Contains(amount))
             {
                 Console.WriteLine($"You have topped up £{amount}\n");
             }
@@ -133,6 +135,7 @@ namespace OysterCard
 
         public void PrintStationList()
         {
+            Console.WriteLine("Select a station...\n");
             var query = Enum.GetValues(typeof(Station))
                     .Cast<Station>()
                     .Except(new Station[] { Station.None });

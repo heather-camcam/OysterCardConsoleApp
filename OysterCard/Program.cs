@@ -12,17 +12,12 @@ namespace OysterCard
             ICustomer customer = new Customer();
             ITfl tfl = new Tfl();
 
+            Console.WriteLine("Welcome to the Oystercard app.\n");
+            Console.WriteLine("Press 1 to get started\n");
+
             while (true)
             {
-                Console.WriteLine("Welcome to the Oystercard app." +
-                    "\nEnter any of the following commands to get started:" +
-                    "\nTop up" +
-                    "\nTouch in" +
-                    "\nTouch out" +
-                    "\nCheck balance" +
-                    "\nCheck zone" +
-                    "\n See journey history" +
-                    "\n");
+                
 
                 var userInput = Console.ReadLine();
 
@@ -57,11 +52,27 @@ namespace OysterCard
                         }
                         break;
 
+                    case "1":
+                        PrintCommands();
+                        break;
+
                     default:
                         Console.WriteLine($"Unknown command {userInput}");
                         break;
                 }
             }
+        }
+
+        private static void PrintCommands()
+        {
+            Console.WriteLine("Enter any of the following commands:" +
+                    "\nTop up" +
+                    "\nTouch in" +
+                    "\nTouch out" +
+                    "\nCheck balance" +
+                    "\nCheck zone" +
+                    "\nSee journey history" +
+                    "\n");
         }
     }
 }
