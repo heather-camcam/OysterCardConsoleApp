@@ -17,7 +17,7 @@ namespace OysterCard
 
             while (true)
             {
-                
+
 
                 var userInput = Console.ReadLine();
 
@@ -44,13 +44,17 @@ namespace OysterCard
                         break;
 
                     case "See journey history":
-                        foreach(List<Station> journey in customer.JourneyHistory)
+
+                        if (customer.JourneyHistory.Count > 0)
                         {
-                            Console.WriteLine($"From: {journey[0]}" +
-                                $"\nTo: {journey[1]}" +
-                                $"\n");
+                            PrintJourneyHistory(customer);
+                            break;
                         }
-                        break;
+                        else
+                        {
+                            Console.WriteLine("Your journey history is empty\n");
+                            break;
+                        }
 
                     case "1":
                         PrintCommands();
@@ -73,6 +77,16 @@ namespace OysterCard
                     "\nCheck zone" +
                     "\nSee journey history" +
                     "\n");
+        }
+
+        private static void PrintJourneyHistory(ICustomer customer)
+        {
+            foreach (List<Station> journey in customer.JourneyHistory)
+            {
+                Console.WriteLine($"From: {journey[0]}" +
+                    $"\nTo: {journey[1]}" +
+                    $"\n");
+            }
         }
     }
 }
