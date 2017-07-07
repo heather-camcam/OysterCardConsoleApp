@@ -21,11 +21,7 @@ namespace OysterCard
             {
                 Console.WriteLine("Select a station...\n");
 
-                foreach (Station station in Enum.GetValues(typeof(Station)))
-                {
-                    Console.WriteLine($"{station}");
-                }
-                Console.WriteLine("\n");
+                _tfl.PrintStationList();
 
                 var stationName = _tfl.TouchOut();
 

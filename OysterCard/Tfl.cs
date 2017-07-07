@@ -130,5 +130,18 @@ namespace OysterCard
             }
             Console.WriteLine("\n");
         }
+
+        public void PrintStationList()
+        {
+            var query = Enum.GetValues(typeof(Station))
+                    .Cast<Station>()
+                    .Except(new Station[] { Station.None });
+
+            foreach (Station station in query)
+            {
+                Console.WriteLine($"{station}");
+            }
+            Console.WriteLine("\n");
+        }
     }
 }

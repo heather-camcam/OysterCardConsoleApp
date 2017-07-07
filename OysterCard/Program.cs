@@ -21,6 +21,7 @@ namespace OysterCard
                     "\nTouch out" +
                     "\nCheck balance" +
                     "\nCheck zone" +
+                    "\n See journey history" +
                     "\n");
 
                 var userInput = Console.ReadLine();

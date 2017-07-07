@@ -25,26 +25,13 @@ namespace OysterCard
             {
                 Console.WriteLine("Select a station...\n");
 
-                PrintStationList();
+                _tfl.PrintStationList();
 
                 var stationName = _tfl.TouchIn();
 
                 if(stationName != Station.None)
                     _customer.TouchIn(stationName);
             }
-        }
-
-        private void PrintStationList()
-        {
-            var query = Enum.GetValues(typeof(Station))
-                    .Cast<Station>()
-                    .Except(new Station[] { Station.None });
-
-            foreach (Station station in query)
-            {
-                Console.WriteLine($"{station}");
-            }
-            Console.WriteLine("\n");
         }
     }
 }

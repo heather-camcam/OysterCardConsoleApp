@@ -26,5 +26,7 @@ namespace OysterCard.Interfaces
         Dictionary<Station, int> AddZoneInfo();
 
         void CheckZone();
+
+        void PrintStationList();
     }
 }
