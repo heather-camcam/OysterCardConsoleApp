@@ -19,5 +19,6 @@ namespace OysterCard.Interfaces
 
         List<Station> Journey { get; set; }
 
+        List<List<Station>> JourneyHistory { get; }
     }
 }

@@ -35,7 +35,7 @@ namespace OysterCard
 
                 _customer.DeductFare(fare);
 
-                _customer.Journey.Clear();
+                //_customer.Journey.Clear();
             }
         }
     }

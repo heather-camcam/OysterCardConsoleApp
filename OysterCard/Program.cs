@@ -1,5 +1,7 @@
 ﻿using OysterCard.Interfaces;
 using System;
+using System.Collections.Generic;
+using static OysterCard.Tfl;
 
 namespace OysterCard
 {
@@ -43,6 +45,15 @@ namespace OysterCard
 
                     case "Check zone":
                         tfl.CheckZone();
+                        break;
+
+                    case "See journey history":
+                        foreach(List<Station> journey in customer.JourneyHistory)
+                        {
+                            Console.WriteLine($"From: {journey[0]}" +
+                                $"\nTo: {journey[1]}" +
+                                $"\n");
+                        }
                         break;
 
                     default:

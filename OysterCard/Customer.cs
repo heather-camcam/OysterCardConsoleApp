@@ -14,13 +14,13 @@ namespace OysterCard
 
         public int Balance { get => _balance; set => _balance = value; }
         public bool InFlight { get => _inFlight; set => _inFlight = value; }
-        public List<List<Station>> JourneyHistory => _journeyHistory;
+        public List<List<Station>> JourneyHistory {get => _journeyHistory;}
         public List<Station> Journey { get => _journey; set => _journey = value; }
 
         public Customer()
         {
             _balance = 0;
-            _journey = new List<Station>();
+            
             _journeyHistory = new List<List<Station>>();
         }
 
@@ -31,6 +31,7 @@ namespace OysterCard
 
         public void TouchIn(Station station)
         {
+            _journey = new List<Station>();
             InFlight = true;
             _journey.Add(station);
         }
