@@ -9,10 +9,6 @@ namespace OysterCard.Interfaces
 {
     interface ITfl
     {
-        List<int> TopUpAmounts { get; set; }
-
-        Dictionary<Station, int> StationAndZoneInfo { get; set; }
-
         List<int> TopUpOptions();
 
         int ValidateInput();
@@ -28,5 +24,9 @@ namespace OysterCard.Interfaces
         void CheckZone();
 
         void PrintStationList();
+
+        List<int> TopUpAmounts { get; set; }
+
+        Dictionary<Station, int> StationAndZoneInfo { get; set; }
     }
 }

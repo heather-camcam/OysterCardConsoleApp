@@ -41,18 +41,16 @@ namespace OysterCard
 
             if (_topUpAmounts.Contains(amount))
             {
-                Console.WriteLine($"You have topped up £{amount}\n");
+                Console.WriteLine($"\nYou have topped up £{amount}\n");
             }
             else
             {
-                Console.WriteLine($"Oops {stringAmount} is not valid. " +
+                Console.WriteLine($"\nOops {stringAmount} is not valid. " +
                     "\nMake sure you are only topping up a valid amount.");
             }
 
             return amount;
         }
-
-
 
         public Station TouchIn()
         {
@@ -60,16 +58,15 @@ namespace OysterCard
 
             if (Enum.IsDefined(typeof(Station), input))
             {
-                Console.WriteLine($"You have touched in to {input} station\n");
+                Console.WriteLine($"\nYou have touched in to {input} station\n");
                 Enum.TryParse(input, out Station station);
                 return station;
             }
             else
             {
-                Console.WriteLine($"Oops {input} is not a valid station\n");
+                Console.WriteLine($"\nOops {input} is not a valid station\n");
                 return Station.None;
             }
-
         }
 
         public Station TouchOut()
@@ -78,11 +75,11 @@ namespace OysterCard
 
             if (Enum.IsDefined(typeof(Station), input))
             {
-                Console.WriteLine($"You have touched out of {input} station\n");
+                Console.WriteLine($"\nYou have touched out of {input} station\n");
             }
             else
             {
-                Console.WriteLine($"Oops {input} is not a valid station\n");
+                Console.WriteLine($"\nOops {input} is not a valid station\n");
             }
 
             Enum.TryParse(input, out Station station);
@@ -135,7 +132,7 @@ namespace OysterCard
 
         public void PrintStationList()
         {
-            Console.WriteLine("Select a station...\n");
+            Console.WriteLine("\nSelect a station...\n");
             var query = Enum.GetValues(typeof(Station))
                     .Cast<Station>()
                     .Except(new Station[] { Station.None });

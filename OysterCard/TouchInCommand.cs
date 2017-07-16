@@ -19,7 +19,7 @@ namespace OysterCard
                 Console.WriteLine($"Your balance is only £{_customer.Balance}. Please top up.\n");
 
             else if (_customer.InFlight)
-                Console.WriteLine("You must touch out of your current journey before beginning a new one.\n");
+                Console.WriteLine("\nYou must touch out of your current journey before beginning a new one.\n");
 
             else
             {

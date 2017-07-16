@@ -14,7 +14,7 @@ namespace OysterCard
             _customer = customer;
             _tfl = tfl;
 
-            Console.WriteLine("How much would you like to top up?" +
+            Console.WriteLine("\nHow much would you like to top up?" +
                 "\nYou can top up the following amounts...\n");
 
             var topUpOptions = _tfl.TopUpOptions();

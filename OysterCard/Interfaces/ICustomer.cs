@@ -5,17 +5,17 @@ namespace OysterCard.Interfaces
 {
     interface ICustomer
     {
-        int Balance { get; set; }
-
-        bool InFlight { get; set; }
+        List<Station> TouchOut(Station station);
 
         void TopUp(int amount);
 
         void TouchIn(Station station);
 
-        List<Station> TouchOut(Station station);
-
         void DeductFare(int fare);
+
+        int Balance { get; set; }
+
+        bool InFlight { get; set; }
 
         List<Station> Journey { get; set; }
 

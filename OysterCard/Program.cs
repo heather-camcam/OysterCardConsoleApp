@@ -17,8 +17,6 @@ namespace OysterCard
 
             while (true)
             {
-
-
                 var userInput = Console.ReadLine();
 
                 switch (userInput)
@@ -36,7 +34,7 @@ namespace OysterCard
                         break;
 
                     case "Check balance":
-                        Console.WriteLine($"Your remaining balance is £{customer.Balance}");
+                        Console.WriteLine($"\nYour remaining balance is £{customer.Balance}");
                         break;
 
                     case "Check zone":
@@ -44,7 +42,6 @@ namespace OysterCard
                         break;
 
                     case "See journey history":
-
                         if (customer.JourneyHistory.Count > 0)
                         {
                             PrintJourneyHistory(customer);
@@ -52,7 +49,7 @@ namespace OysterCard
                         }
                         else
                         {
-                            Console.WriteLine("Your journey history is empty\n");
+                            Console.WriteLine("\nYour journey history is empty\n");
                             break;
                         }
 
@@ -69,7 +66,7 @@ namespace OysterCard
 
         private static void PrintCommands()
         {
-            Console.WriteLine("Enter any of the following commands:" +
+            Console.WriteLine("\nEnter any of the following commands:" +
                     "\nTop up" +
                     "\nTouch in" +
                     "\nTouch out" +
